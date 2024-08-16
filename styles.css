@@ -1,5 +1,10 @@
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Roboto', sans-serif;
     background-color: #0c0f16;
     color: #ffffff;
@@ -19,6 +24,7 @@ body {
     left: -250px; /* Initially hidden off-screen */
     height: 100%;
     transition: left 0.3s ease;
+    z-index: 10; /* Ensure the sidebar is above other elements */
 }
 
 .sidebar.active {
@@ -29,7 +35,6 @@ body {
     position: absolute;
     top: 10px;
     left: 10px;
-    /* The NOSSA logo stays fixed and does not slide */
 }
 
 .brand h2 {
