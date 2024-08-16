@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #0c0f16;
+    color: #ffffff;
+    display: flex;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.sidebar {
+    background: rgba(15, 20, 30, 0.9);
+    width: 250px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden off-screen */
+    height: 100%;
+    transition: left 0.3s ease;
+}
+
+.sidebar.active {
+    left: 0; /* Slide in when active */
+}
+
+.brand {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    /* The NOSSA logo stays fixed and does not slide */
+}
+
+.brand h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #00ff96;
+}
+
+.hamburger-menu {
+    font-size: 24px;
+    cursor: pointer;
+    margin-top: 60px;
+    color: #ffffff;
+    position: absolute;
+    top: 20px;
+    right: -30px; /* Position hamburger outside the sidebar */
+}
+
+#sidebar-nav {
+    margin-top: 100px;
+    display: none;
+}
+
+.sidebar.active #sidebar-nav {
+    display: block;
+}
+
+#sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar-nav ul li {
+    margin: 15px 0;
+}
+
+#sidebar-nav ul li a {
+    color: #00ff96;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.main-content {
+    margin-left: 60px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.upload-section, #pdf-viewer {
+    background: rgba(15, 20, 30, 0.85);
+    border: 2px solid #1e2a38;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 255, 150, 0.5);
+}
+
+.upload-section h1 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+#drop-area {
+    padding: 20px;
+    border: 2px dashed #1e2a38;
+    border-radius: 8px;
+    background: #0c1c2e;
+    cursor: pointer;
+}
+
+.upload-label {
+    color: #00ff96;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+}
+
+#fileElem {
+    display: none;
+}
+
+#progress-area, #upload-status {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+#progress-area {
+    height: 20px;
+    background: #1e2a38;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#progress-area .progress-bar {
+    height: 100%;
+    background: #00ff96;
+    width: 0;
+    transition: width 0.3s;
+}
+
+#pdf-viewer {
+    text-align: center;
+}
+
+.zoom-controls {
+    margin-top: 10px;
+}
+
+.zoom-controls button {
+    margin: 0 10px;
+    padding: 5px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    background: #0c1c2e;
+    color: #00ff96;
+    border: 1px solid #1e2a38;
+    border-radius: 4px;
+}

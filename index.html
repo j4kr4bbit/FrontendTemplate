@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Military PDF Upload - NOSSA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="brand">
+            <h2>NOSSA</h2>
+        </div>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        <nav id="sidebar-nav">
+            <ul>
+                <li><a href="#">Upload</a></li>
+                <li><a href="#">View Files</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="main-content">
+        <div class="upload-section">
+            <h1>Upload Your Mission Briefing (PDF)</h1>
+            <div id="drop-area">
+                <form id="upload-form">
+                    <input type="file" id="fileElem" accept="application/pdf" onchange="handleFiles(this.files)">
+                    <label class="upload-label" for="fileElem">Drag & Drop or Click to Upload</label>
+                </form>
+            </div>
+            <div id="progress-area"></div>
+            <div id="upload-status"></div>
+        </div>
+        <div id="pdf-viewer" style="display:none;">
+            <canvas id="pdf-canvas"></canvas>
+            <div class="zoom-controls">
+                <button onclick="zoomIn()">Zoom In</button>
+                <button onclick="zoomOut()">Zoom Out</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
